@@ -15,5 +15,4 @@ A nginx layer is added. It manages two services in independent containers at loc
 
 ## TODO
 
-- auth key as a secret
-- force reuse hostname in tailscale instead of adding suffix. Example: first start is assigned `hostname`. Then, if container is recreated, Tailscale assigns `hostname-1`
+- force reuse hostname in tailscale instead of adding suffix. Example: first container is assigned `hostname`. Then, if container is recreated, Tailscale assigns `hostname-1`. Possibly helpful [info](https://tailscale.com/kb/1111/ephemeral-nodes/#can-i-create-an-ephemeral-node-without-an-auth-key).

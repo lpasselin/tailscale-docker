@@ -3,6 +3,8 @@ services:
   tailscale:
     build:
       context: ./tailscale
+    environment:
+      - TAILSCALE_AUTH_KEY
   some-service-1:
     image: nginxdemos/hello
     network_mode: "service:tailscale"
