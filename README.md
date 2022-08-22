@@ -1,4 +1,4 @@
-# Tailscale in Docker without eleveted privileges
+# Tailscale in Docker without elevated privileges
 
 See associated blog post: https://asselin.engineer/tailscale-docker
 
