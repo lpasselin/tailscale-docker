@@ -1,6 +1,6 @@
-# Tailscale in Docker
+# Tailscale in Docker without eleveted privileges
 
-Tailscale in Docker without elevated privileges. See associated blog post: https://asselin.engineer/tailscale-docker
+See associated blog post: https://asselin.engineer/tailscale-docker
 
 **Replace TAILSCALE_AUTH_KEY in `*/tailscale/start.sh` with your own**: https://login.tailscale.com/admin/settings/keys
 
