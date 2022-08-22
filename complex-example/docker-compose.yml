@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  tailscale:
+    build:
+      context: ./tailscale
+  nginx:
+    build:
+      context: ./nginx
+    depends_on:
+      - service-one
+      - service-two
+    network_mode: "service:tailscale"
+  service-one:
+    image: nginxdemos/hello
+  service-two:
+    image: nginxdemos/hello

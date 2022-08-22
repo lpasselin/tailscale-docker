@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  tailscale:
+    build:
+      context: ./tailscale
+  some-service-1:
+    image: nginxdemos/hello
+    network_mode: "service:tailscale"
