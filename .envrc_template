@@ -1,0 +1,2 @@
+# Rename to .envrc
+export TAILSCALE_AUTH_KEY=""
