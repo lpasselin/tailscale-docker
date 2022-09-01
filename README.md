@@ -15,9 +15,16 @@ A nginx layer is added. It manages two services in independent containers at loc
 
 ## K8S
 
-Simple K8S example.
-Build and push the image to a registry, and change to image name, in the deployment.yaml file.
-Also add you Tailscale key to the env variable in the deployment.
+Pre Reqs:
+
+- [Kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installing-with-a-package-manager)
+- [Kubectl](https://kubernetes.io/docs/tasks/tools/)
+
+To deploy a local Kind cluster run `make create_k8s`
+
+To deploy the Tailscale and NGINX pod, run `make deploy_tailscale` after you change the `TAILSCALE_AUTH_KEY` value to your Tailscale token
+
+To cleanup agin run `make delete_k8s`
 
 ## TODO
 
