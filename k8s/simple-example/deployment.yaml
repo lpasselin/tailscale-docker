@@ -16,7 +16,11 @@ spec:
           image: ghcr.io/lpasselin/tailscale-docker:latest
           env:
             - name: TAILSCALE_AUTH_KEY
-              value: "YOUR_KEY"
+              value: "${TAILSCALE_AUTH_KEY:-err}"
+            - name: TAILSCALE_HOSTNAME
+              value: "tailscale-docker-k8s-simple"
+            - name: TAILSCALE_STATE_ARG
+              value: "mem:"
           resources:
             limits:
               memory: "128Mi"
