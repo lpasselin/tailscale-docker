@@ -4,12 +4,15 @@ See associated blog post: <https://asselin.engineer/tailscale-docker>
 
 **Set the TAILSCALE_AUTH_KEY with your own ephemeral auth key**: <https://login.tailscale.com/admin/settings/keys>
 
-The `Makefile` contains all commands to launch the various examples. Refer to it to understand which commands are used.
-
 ## docker-compose
+
+The examples detailed below are in the docker-compose folder.
 
 By default, no state is saved. The nodes are removed from the network when the tailscale container is terminated. This means the ip address is never the same.
 The `stateful-example` does save the tailscale node state to a docker volume.
+
+Requirements:
+- [docker-compose](https://docs.docker.com/compose/install/)
 
 Usage:
 ````bash
