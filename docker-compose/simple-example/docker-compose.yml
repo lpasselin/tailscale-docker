@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  tailscale:
+    build:
+      context: ../../images/tailscale
+    environment:
+      TAILSCALE_AUTH_KEY: ${TAILSCALE_AUTH_KEY:?err}
+      TAILSCALE_HOSTNAME: ${TAILSCALE_HOSTNAME:-tailscale-docker-simple-example}
+      TAILSCALE_STATE_ARG: "mem:"
+  some-service-1:
+    image: nginxdemos/hello
+    network_mode: "service:tailscale"
