@@ -6,10 +6,9 @@ on:
   push:
     branches:
       - "main"
-      - "dev"
       - "v*.*.*"
     paths:
-      - "k8s/**"
+      - "images/tailscale/**"
 
 permissions:
   contents: read
