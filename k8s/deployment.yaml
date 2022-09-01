@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: tailscale
-          image: YOUR_IMAGE
+          image: ghcr.io/lpasselin/tailscale-docker:latest
           env:
             - name: TAILSCALE_AUTH_KEY
               value: "YOUR_KEY"
