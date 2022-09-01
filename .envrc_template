@@ -1,0 +1,3 @@
+# Rename to .envrc
+export TAILSCALE_AUTH_KEY=""
+# export TAILSCALE_HOSTNAME=""

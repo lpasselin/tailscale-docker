@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  tailscale:
+    build:
+      context: ../../images/tailscale
+    environment:
+      TAILSCALE_AUTH_KEY: ${TAILSCALE_AUTH_KEY:?err}
+      TAILSCALE_HOSTNAME: ${TAILSCALE_HOSTNAME:-tailscale-docker-stateful-example}
+      TAILSCALE_STATE_ARG: "/var/lib/tailscale_state/tailscale.state" # a file
+    volumes:
+      # a volume is used but it could be a local directory.
+      - /var/lib/tailscale_state/
+  some-service-1:
+    image: nginxdemos/hello
+    network_mode: "service:tailscale"
