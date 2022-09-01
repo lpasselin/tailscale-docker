@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tailscale
+spec:
+  selector:
+    matchLabels:
+      app: tailscale
+  template:
+    metadata:
+      labels:
+        app: tailscale
+    spec:
+      containers:
+        - name: tailscale
+          image: ghcr.io/lpasselin/tailscale-docker:latest
+          env:
+            - name: TAILSCALE_AUTH_KEY
+              value: "YOUR_KEY"
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+        - name: nginx
+          image: nginxdemos/hello
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
