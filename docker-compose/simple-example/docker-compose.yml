@@ -7,6 +7,8 @@ services:
       TAILSCALE_AUTH_KEY: ${TAILSCALE_AUTH_KEY:?err}
       TAILSCALE_HOSTNAME: ${TAILSCALE_HOSTNAME:-tailscale-docker-simple-example}
       TAILSCALE_STATE_ARG: "mem:"
+      # (optional) set additional flags on tailscaled
+      # TAILSCALE_OPT: --outbound-http-proxy-listen=localhost:1055
   some-service-1:
     image: nginxdemos/hello
     network_mode: "service:tailscale"
